@@ -55,7 +55,7 @@ def process_model(onnx_file, input_json):
     
     if not ezkl.create_evm_verifier(vk_path, settings_path, sol_code_path, abi_path):
         raise Exception("Failed to create EVM verifier")
-    print(f"EVM Verifier and ABI files generated: {sol_code_path}, {abi_path}")
+    print(f"EVM Verifier and ABI files generated")
 
 
     onchain_input_array = []
@@ -71,8 +71,8 @@ def process_model(onnx_file, input_json):
             formatted_output += "], ["
         else:
             formatted_output += "]"
-    print("pubInputs: ", formatted_output)
-    print("proof: ", proof["proof"])
+    print("pubInput")
+    print("proof: ")
 
 
 if __name__ == "__main__":
